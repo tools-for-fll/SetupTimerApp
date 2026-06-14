@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2026 Brian Kircher
+
+Open Source Software: you can modify and/or share it under the terms of the BSD
+license file in the root directory of this project.
+-->
+<html lang="en-us">
+  <head>
+    <title>Setup Timer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.webp">
+    <link rel="shortcut icon" href="favicon.webp">
+    <meta name="description" content="Setup timer for the FIRST LEGO League (FLL) robot game">
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Setup Timer">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icons/icon-512x512.webp">
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="timer.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="timer">
+        <button id="btn_about">?</button>
+        <div id="progress-bar">
+          <progress value="180" min="0" max="180">180</progress>
+          <span id="stage">Inspection</span>
+          <span id="time">3:00</span>
+        </div>
+      </div>
+      <div id="buttons">
+        <div id="start">
+          <button id="btn_start">Start</button>
+        </div>
+        <div id="reset">
+          <button id="btn_reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <dialog id="ios_install">
+      <span class="title">
+        Installing Setup Timer
+      </span>
+      <hr>
+      <span>
+        This application can be installed to your device by following these
+        simple steps:
+        <ol>
+          <li>
+            Click on the share button at the bottom center of the browser.
+          </li>
+          <li>
+            Scroll down and select "Add to Home Screen" from the menu that pops
+            up.
+          </li>
+          <li>
+            Select "Add" to install this application to the home screen.
+          </li>
+        </ol>
+        The benefit of installing as an application is the ability to use it
+        even when you do not have a network connection (for exmple, in some
+        schools).
+      </span>
+      <br>
+      <br>
+      <span class="buttons">
+        <button id="ok">OK</button>
+      </span>
+    </dialog>
+    <dialog id="android_install">
+      <span class="title">
+        Installing Setup Timer
+      </span>
+      <hr>
+      <span>
+        This application can be installed to your device by following these
+        simple steps:
+        <ol>
+          <li>
+            Click on the three vertical dots in the upper right corner of the
+            browser.
+          </li>
+          <li>
+            Select "Add to Home screen" from the menu that pops up.
+          </li>
+          <li>
+            Select "Install" to install this application (as opposed to adding
+            a browser shortcut).
+          </li>
+          <li>
+            Select "Install" to confirm that you'd like to install the
+            application.
+          </li>
+          <li>
+            Select "Add to home screen" to finalize installing the application
+            to the home screen.
+          </li>
+        </ol>
+        The benefit of installing as an application is the ability to use it
+        even when you do not have a network connection (for exmple, in some
+        schools).
+      </span>
+      <br>
+      <br>
+      <span class="buttons">
+        <button id="ok">OK</button>
+      </span>
+    </dialog>
+    <dialog id="about">
+      <div class="container">
+        <div class="logo">
+          <img src="favicon.webp" alt="Setup Timer logo"/>
+        </div>
+        <div class="info">
+          <span class="title">Setup Timer</span>
+          <br>
+          <span>Copyright &copy; 2026 Brian Kircher</span>
+          <br>
+          <span>
+            <a id="btn_license">License</a>
+          </span>
+          <br>
+          <span id="ios_install">
+            Click <a id="btn_ios">here</a> for iOS installation
+            instructions.
+          </span>
+          <span id="android_install">
+            Click <a id="btn_android">here</a> for Android installation
+            instructions.
+          </span>
+          <br>
+          <button id="ok">OK</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="license">
+      <p>
+        <a href="https://github.com/tools-for-fll/SetupTimerApp"
+           target="_blank">
+          Setup Timer
+        </a>
+      </p>
+      <p>
+        Copyright &copy; 2026 Brian Kircher
+      </p>
+      <p>
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are
+        met:
+      </p>
+      <ol>
+        <li>
+          Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+        </li>
+        <li>
+          Redistributions in binary form must reproduce the above copyright
+          notice, this list of conditions and the following disclaimer in the
+          documentation and/or other materials provided with the distribution.
+        </li>
+        <li>
+          Neither the name of the copyright holder nor the names of its
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
+        </li>
+      </ol>
+      <p>
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+        IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+        TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+      </p>
+      <button id="ok">OK</button>
+    </dialog>
+  </body>
+</html>

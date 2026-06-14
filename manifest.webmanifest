@@ -1,0 +1,69 @@
+{
+  "background_color": "#000000",
+  "categories":
+  [
+    "education"
+  ],
+  "description": "Setup timer for the FIRST LEGO League (FLL) robot game",
+  "display": "standalone",
+  "icons":
+  [
+    {
+      "sizes": "192x192",
+      "src": "icons/icon-192x192.webp",
+      "type": "image/webp"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "icons/icon-192x192-maskable.webp",
+      "type": "image/webp"
+    },
+    {
+      "sizes": "384x384",
+      "src": "icons/icon-384x384.webp",
+      "type": "image/webp"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "384x384",
+      "src": "icons/icon-384x384-maskable.webp",
+      "type": "image/webp"
+    },
+    {
+      "sizes": "512x512",
+      "src": "icons/icon-512x512.webp",
+      "type": "image/webp"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icons/icon-512x512-maskable.webp",
+      "type": "image/webp"
+    }
+  ],
+  "id": "index.html",
+  "lang": "en-US",
+  "name": "Setup Timer",
+  "orientation": "portrait",
+  "screenshots":
+  [
+    {
+      "form_factor": "narrow",
+      "label": "The setup timer in portrait mode.",
+      "sizes": "820x1180",
+      "src": "screenshots/startup_n.webp",
+      "type": "image/webp"
+    },
+    {
+      "form_factor": "wide",
+      "label": "The setup timer in landscape mode.",
+      "sizes": "1180x820",
+      "src": "screenshots/startup_w.webp",
+      "type": "image/webp"
+    }
+  ],
+  "short_name": "Setup Timer",
+  "start_url": "index.html",
+  "theme_color": "#000000"
+}

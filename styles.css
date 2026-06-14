@@ -1,0 +1,381 @@
+/*
+ * Copyright (c) 2026 Brian Kircher
+ *
+ * Open Source Software: you can modify and/or share it under the terms of the
+ * BSD license file in the root directory of this project.
+ */
+
+:root
+{
+  --color-accent: blue;
+  --color-background: black;
+  --color-foreground: white;
+  --color-gray: #282828;
+  --color-inspection: blue;
+  --color-reset: gray;
+  --color-reset-armed: red;
+  --color-setup: green;
+  --color-start: green;
+  --color-text: white;
+  --color-warning: red;
+  --popup-time: 0.25s;
+}
+
+a
+{
+  color: var(--color-foreground);
+}
+
+a:hover
+{
+  color: var(--color-accent);
+}
+
+body
+{
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0;
+  position: fixed;
+}
+
+#container
+{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 90vh;
+  margin: 5vh;
+  overflow: hidden;
+  position: fixed;
+  width: calc(100vw - 10vh);
+}
+
+#timer
+{
+  align-items: center;
+  display: flex;
+  grid-column: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#btn_about
+{
+  background-color: var(--color-background);
+  border: none;
+  color: var(--color-foreground);
+  font-family: monospace;
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#progress-bar
+{
+  align-items: center;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(closest-side, var(--color-background) 74%,
+                    var(--color-foreground) 74%, var(--color-foreground) 77%,
+                    transparent 77% 97%, var(--color-foreground) 97%,
+                    var(--color-foreground) 100%),
+    conic-gradient(var(--gradient));
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#progress-bar progress
+{
+  height: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+#stage
+{
+  color: var(--color-text);
+}
+
+#time
+{
+  color: var(--color-text);
+}
+
+#buttons
+{
+  display: grid;
+  grid-column: 2;
+  grid-template-rows: 1fr 1fr;
+}
+
+#start
+{
+  align-items: center;
+  display: flex;
+  grid-row: 1;
+  justify-content: center;
+}
+
+#btn_start
+{
+  background-color: var(--color-start);
+  color: var(--color-text);
+  font-size: 2.5rem;
+  height: 70%;
+  width: 70%;
+}
+
+#reset
+{
+  align-items: center;
+  display: flex;
+  grid-row: 2;
+  justify-content: center;
+}
+
+#btn_reset
+{
+  background-color: var(--color-reset);
+  color: var(--color-text);
+  font-size: 2.5rem;
+  height: 70%;
+  width: 70%;
+}
+
+@media (aspect-ratio < 1)
+{
+  #container
+  {
+    display: grid;
+    grid-template-columns: unset;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  #timer
+  {
+    grid-column: unset;
+    grid-row: 1;
+  }
+
+  #buttons
+  {
+    grid-column: unset;
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: unset;
+  }
+
+  #start
+  {
+    grid-column: 1;
+    grid-row: unset;
+  }
+
+  #reset
+  {
+    grid-column: 2;
+    grid-row: unset;
+  }
+}
+
+dialog
+{
+  background-color: var(--color-background);
+  border: 1px solid var(--color-accent);
+  border-radius: 1rem;
+  color: var(--color-foreground);
+  padding: 1rem;
+}
+
+dialog::backdrop
+{
+  background-color: #000000c0;
+}
+
+dialog[open]
+{
+  animation: show_dialog var(--popup-time) ease normal;
+}
+
+dialog.hide
+{
+  animation: hide_dialog var(--popup-time) ease normal;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  dialog[open]
+  {
+    animation: show_dialog 0s ease normal;
+  }
+
+  dialog.hide
+  {
+    animation: hide_dialog 0.01s ease normal;
+  }
+}
+
+dialog a
+{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+dialog button
+{
+  background-color: var(--button-background-color);
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  color: var(--button-color);
+  font-size: 1.25rem;
+  min-width: 5rem;
+  padding: 0.5rem;
+}
+
+dialog button:hover
+{
+  background-color: var(--button-select-background-color);
+  color: var(--button-select-color);
+}
+
+dialog hr
+{
+  border: 1px solid var(--color-accent);
+  margin: 0 0 1rem 0;
+}
+
+dialog p
+{
+  margin: 0 0 1rem 0;
+}
+
+dialog#ios_install .title,
+dialog#android_install .title
+{
+  align-items: center;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: center;
+}
+
+dialog#ios_install .buttons,
+dialog#android_install .buttons
+{
+  align-items: center;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: center;
+}
+
+dialog#about .container
+{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (width > 768px)
+{
+  dialog#about .container
+  {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: unset;
+  }
+}
+
+dialog#about .container .logo
+{
+  align-items: center;
+  display: flex;
+  grid-row: 1;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (width > 768px)
+{
+  dialog#about .container .logo
+  {
+    grid-column: 1;
+    grid-row: unset;
+  }
+}
+
+dialog#about .container .logo img
+{
+  max-height: 12rem;
+  max-width: 12rem;
+}
+
+dialog#about .container .info
+{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (width > 768px)
+{
+  dialog#about .container .info
+  {
+    grid-column: 2;
+    grid-row: unset;
+  }
+}
+
+dialog#about .container .info span
+{
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+dialog#about .container .info .title
+{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+dialog#about #ios_install,
+dialog#about #android_install
+{
+  display: none;
+}
+
+dialog#license::backdrop
+{
+  background-color: #0000003f;
+}
+
+@keyframes show_dialog
+{
+  from
+  {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to
+  {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hide_dialog
+{
+  from
+  {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to
+  {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
