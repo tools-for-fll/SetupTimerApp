@@ -629,12 +629,12 @@ onLoad(event)
   {
     if(isIOS)
     {
-      document.querySelector("#ios_install").
+      document.querySelector("span#ios_install").
         setAttribute("style", "display: unset");
     }
     else if(isAndroid)
     {
-      document.querySelector("#android_install").
+      document.querySelector("span#android_install").
         setAttribute("style", "display: unset");
     }
   }
