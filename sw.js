@@ -5,7 +5,7 @@
 
 const prefix = "setup-timer-";
 
-const cacheName = `${prefix}site-v0`;
+const cacheName = `${prefix}site-v1`;
 
 const assets =
 [
